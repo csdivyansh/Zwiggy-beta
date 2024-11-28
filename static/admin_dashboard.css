@@ -1,0 +1,163 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+/* Header */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Unauthorized User Count */
+.pending-users-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pending-users-count {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 18px 25px;
+    text-align: left;
+}
+
+th {
+    background-color: #34495e;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    background-color: #ecf0f1;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tr:hover td {
+    background-color: #f0f0f0;
+}
+
+/* Button Spacing */
+.action-buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+}
+
+button {
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Approve Button */
+.approve-btn {
+    background-color: #2ecc71; /* Green */
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #27ae60;
+    color: white;
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Reject Button */
+.reject-btn {
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #c0392b;
+    color: white;
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Form Wrapper */
+form {
+    display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    table {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .pending-users-count {
+        font-size: 1.2rem;
+    }
+}

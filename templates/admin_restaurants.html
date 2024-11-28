@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='restaurant.css') }}">
+</head>
+
+<body>
+    <!-- Log Out Button -->
+    <div class="logout-button">
+        <a href="{{ url_for('logout') }}">LogOut</a>
+    </div>
+    
+    <div class="res_header">
+        Restaurants List
+    </div>
+    
+    <div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <strong> {{ message }} </strong>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <br>
+    <div class="admin_dashboard-button">
+        <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
+    </div>
+    <br>
+    <div class='create-new-button'>
+        <a href="{{ url_for('newRestaurant') }}">Add New Restaurant</a>
+    </div>
+    <br>
+    <div class="restaurants-container">
+        {% for i in restaurants %}
+        <div class="restaurant-item">
+            <a href="{{ url_for('restaurantMenu', restaurant_id=i.id) }}">{{ i.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>

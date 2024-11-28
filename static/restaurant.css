@@ -1,0 +1,273 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#content {
+  display: block; /* Ensure content is visible by default */
+}
+
+.res_header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 40px;
+  
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+p {
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+}
+
+.res_header::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #e74c3c;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+
+/* Search Bar */
+.search-form {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-form input[type="text"] {
+  padding: 10px 15px;
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-form input[type="text"]:focus {
+  border-color: #e74c3c;
+  outline: none;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-form button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Create new button */
+.create-new-button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.create-new-button {
+  background-color: #ffffff;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.create-new-button:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.create-new-button a {
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  background: linear-gradient(to right, #ecf0f1, #ffffff);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Restaurant Container */
+.restaurants-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Restaurant Item */
+.restaurant-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-item a {
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  background: linear-gradient(to right, #ecf0f1, #ffffff);
+  transition: background 0.3s, color 0.3s;
+}
+
+.restaurant-item a:hover {
+  background: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-form input[type="text"] {
+    width: 100%;
+  }
+}
+/* 
+position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; */
+/* Positioning the log-out button at the top-right corner */
+/* Styling the logout button */
+/* Logout Button */
+/* Logout Button */
+.logout-button {
+  position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; 
+  display: inline-block;
+  margin: 8px 15px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none; /* Remove underline */
+  border-radius: 10px; /* Less rounded */
+  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  color: #e74c3c; /* Red color text */
+  border: 1px solid rgba(231, 76, 60, 0.5); /* Smaller border */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.admin_dashboard-button {
+  position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999; 
+  display: inline-block;
+  margin: 8px 15px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none; /* Remove underline */
+  border-radius: 10px; /* Less rounded */
+  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  color: #e74c3c; /* Red color text */
+  border: 1px solid rgba(231, 76, 60, 0.5); /* Smaller border */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.admin_dashboard-button a {
+  color: inherit; /* Inherit the color from parent */
+  text-decoration: none; /* Remove underline from link */
+  display: inline-block; /* Ensures proper padding and alignment */
+}
+
+.admin_dashboard-button:hover {
+  background: rgba(216, 10, 10, 0.5); /* Slightly more visible red background on hover */
+  border-color: rgba(231, 76, 60, 0.999); /* Darker red border on hover */
+  color: #fff; /* White text on hover */
+ 
+  transform: translateY(-3px); /* Lift the button on hover */
+}
+
+.admin_dashboard-button:active {
+  transform: translateY(2px); /* Button presses down on click */
+  box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3); /* Red shadow for pressed effect */
+}
+
+
+.logout-button a {
+  color: inherit; /* Inherit the color from parent */
+  text-decoration: none; /* Remove underline from link */
+  display: inline-block; /* Ensures proper padding and alignment */
+}
+
+.logout-button:hover {
+  background: rgba(216, 10, 10, 0.5); /* Slightly more visible red background on hover */
+  border-color: rgba(231, 76, 60, 0.999); /* Darker red border on hover */
+  color: #fff; /* White text on hover */
+ 
+  transform: translateY(-3px); /* Lift the button on hover */
+}
+
+.logout-button:active {
+  transform: translateY(2px); /* Button presses down on click */
+  box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3); /* Red shadow for pressed effect */
+}
+
+/* Positioning the logout button */
+.top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.top-buttons a {
+  margin-left: 10px;
+}

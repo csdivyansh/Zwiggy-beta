@@ -1,0 +1,160 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: url("images/img1.jpg") 0% 0% / cover no-repeat;
+                
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+   
+}
+
+
+
+/* Adding the vignette effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%); */
+    z-index: -1; /* Make sure the vignette is behind the content */
+    pointer-events: none; /* Allow interaction with the page elements */
+}
+
+/* Hero Section with Glass Effect */
+.hero {
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.01); /* Increased transparency for the card */
+    border-radius: 20px; /* Soft, rounded corners */
+    backdrop-filter: blur(7px); /* More subtle blur */
+    box-shadow: 0 15px 30px rgba(206, 196, 196, 0.001); /* Light shadow for depth */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid rgba(231, 76, 60, 0.2); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adding an Overlay to the Image (Dark overlay for contrast inside the card) */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
+    border-radius: 20px;
+    z-index: -1;
+}
+
+/* Hero Text and Other Elements */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e74c3c;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #e74c3c, #e74c3c); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Soft shadow to improve readability */
+}
+
+/* Hero description (paragraph) */
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #fff; /* White text to contrast with dark image background */
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for better contrast */
+}
+
+/* Buttons */
+.cta {
+    display: inline-flex;
+    align-items: center; /* Vertically center the text and logo */
+    justify-content: center; /* Center the text horizontally */
+    margin: 10px 15px;
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #e74c3c, #e74c3c); /* Red gradient */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button hover effects */
+.cta:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    transform: translateY(-3px);
+}
+
+.cta:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
+}
+/* Transparent Login and Register Buttons */
+/* Transparent Login and Register Buttons */
+.cta-login, .cta-register {
+    display: inline-block;
+    margin: 8px 15px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px; /* Less rounded */
+    background: rgba(255, 255, 255, 0.5); /* Transparent background */
+    color: #e74c3c; /* Red color text */
+    border: 1px solid rgba(231, 76, 60, 0.5); /* Smaller border */
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-login:hover, .cta-register:hover {
+    background: rgba(142, 68, 173, 0.4); /* Slightly more visible background on hover */
+    border-color: rgba(155, 89, 182, 0.8); /* Darker red border on hover */
+    color:  #fff; /* White text on hover */
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+    transform: translateY(-3px); /* Lift the button on hover */
+  }
+  
+  .cta-login:active, .cta-register:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
+  }
+
+.top-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.top-buttons a {
+    margin-left: 10px;
+}

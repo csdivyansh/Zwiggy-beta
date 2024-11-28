@@ -1,0 +1,30 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit.css') }}">
+</head>
+<body>
+    <h1> New Menu Item </h1>
+
+        <form action="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}" method="POST">
+
+            <p>Name:</p>
+            <input type="text" name="name" size="30" required>
+
+            <p>Course:</p>
+            <input type="text" name="course" size="30">
+
+            <p>Description:</p>
+            <textarea name="description" rows="4" cols="30"></textarea>
+
+            <p>Price:</p>
+            <input type="number" name="price" step="0.01" required>
+
+            <input type="submit" value="Create">
+        </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='register.css') }}">
+  </head>
+  <body>
+    <div class="register-container">
+      <h1>Login as Admin</h1>
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+
+      <form action="{{ url_for('login') }}" method="POST">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="password" name="password" placeholder="Password" required />
+
+        <!-- Custom CAPTCHA -->
+        <div class="captcha-container">
+          <div class="captcha"><img src="{{ url_for('captcha_image') }}" alt="Captcha Image" /></div>
+          <a href="{{ url_for('login', refresh_captcha=True) }}" id="refresh-captcha">Refresh</a>
+        
+          
+        </div>
+        <input
+          type="text"
+          name="captcha"
+          placeholder="Enter the CAPTCHA text"
+          class="captcha-input"
+          required
+        />
+
+        <button type="submit">Login</button>
+      </form>
+
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<div class="container">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='admin_dashboard.css') }}">
+    <h1>Admin Dashboard</h1>
+    
+    <!-- Unauthorized User Count -->
+    <div class="pending-users-container">
+        <h3>Unapproved Users <span class="pending-users-count">{{ pending_users_count }}</span></h3>
+    </div>
+    
+    <!-- User Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+        </thead>
+        <tbody>
+            {% for user in users if not user.is_approved %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>
+                    <form action="{{ url_for('approve_user', user_id=user.id) }}" method="">
+                        <button type="submit" class = "approve-btn">Approve</button>
+                    </form>
+                    &nbsp;
+                    <form action="{{ url_for('reject_user', user_id=user.id) }}" method="POST">
+                        <button type="submit" class = "reject-btn">Reject</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

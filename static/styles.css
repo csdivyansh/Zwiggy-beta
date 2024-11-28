@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fb; 
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  color: #2d2d2d;
+  margin: 0.5em 0;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif; /* Elegant serif font for major headings */
+}
+
+/* Heading Styles */
+h1 {
+  font-size: 2.4em;
+  border-bottom: 3px solid #3498db; /* Modern blue underline */
+  padding-bottom: 0.3em;
+  margin-bottom: 2em;
+  color: #2c3e50; /* Darker color for h1 */
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #2980b9; /* Blue tone for subheadings */
+}
+
+h3, h4 {
+  font-size: 1.2em;
+  color: #555; /* Lighter gray for smaller headings */
+}
+
+p, dd, dt {
+  color: #444; /* Darker text for better readability */
+  margin: 0.8em 0;
+  font-size: 1em;
+}
+
+a {
+  color: #3498db; /* Primary color: blue */
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+}
+
+
+.pane {
+  position: relative;
+  width: 75%;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border: 1px solid #ddd; /* Light border for definition */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.name,
+.price {
+  display: inline-block;
+  width: 48%;
+}
+
+.name {
+  text-align: left;
+  font-size: large;
+  font-style: normal;
+  
+}
+
+.price {
+  text-align: right;
+}
+
+
+.flash {
+  background-color: #930808;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.message {
+  color: yellow;
+}
+
+.res_header {
+  color: red;
+  font-size: xx-large;
+  text-align: center;
+}
+
+
+
+.restaurants-container {
+  display: flex;
+  flex-direction: column; /* Stack restaurant items vertically */
+  justify-content: center;
+  align-items: center;    /* Center-align the links inside the container */
+  width: 100%;
+}
+
+.restaurant-item {
+  margin: 10px 0;  /* Space between each restaurant name */
+}
+
+.restaurant-item a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Removes underline */
+  font-size: 1.2em; /* Font size for restaurant name */
+  font-weight: bold; /* Bold font for restaurant names */
+  transition: color 0.3s ease;
+}
+
+.restaurant-item a:hover {
+  color: #0056b3; /* Change link color on hover */
+}
